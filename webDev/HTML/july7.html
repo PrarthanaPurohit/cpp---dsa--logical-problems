@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+
+    <h2>Enter Marks</h2>
+
+    <input type="number" id="s1" placeholder="Subject 1 Marks"><br>
+    <input type="number" id="s2" placeholder="Subject 2 Marks"><br> 
+    <input type="number" id="s3" placeholder="Subject 3 Marks"><br>
+    <input type="number" id="s4" placeholder="Subject 4 Marks"><br>
+    <input type="number" id="s5" placeholder="Subject 5 Marks"><br>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <div id="result"></div>
+
+    <script>
+        function calculate() {
+            let m1 = parseFloat(document.getElementById("s1").value);
+            let m2 = parseFloat(document.getElementById("s2").value);
+            let m3 = parseFloat(document.getElementById("s3").value);
+            let m4 = parseFloat(document.getElementById("s4").value);
+            let m5 = parseFloat(document.getElementById("s5").value);
+
+
+            if (isNaN(m1) || isNaN(m2) || isNaN(m3) || isNaN(m4) || isNaN(m5)) {
+                document.getElementById("result").innerText = "Please enter all 5 subject marks.";
+                return;
+            }
+            
+
+            let total = m1 + m2 + m3 + m4 + m5;
+            let percentage = (total / 500) * 100;
+
+            let grade = "";
+            if (percentage >= 90) {
+                grade = "A+";
+            } else if (percentage >= 80) {
+                grade = "A";
+            } else if (percentage >= 70) {
+                grade = "B";
+            } else if (percentage >= 60) {
+                grade = "C";
+            } else if (percentage >= 50) {
+                grade = "D";
+            } else {
+                grade = "F (Fail)";
+            }
+
+            document.getElementById("result").innerHTML = `
+                Total Marks: ${total}/500 <br>
+                Percentage: ${percentage.toFixed(2)}% <br>
+                Grade: ${grade}
+            `;
+        }
+    </script>
+
+</body>
+</html>

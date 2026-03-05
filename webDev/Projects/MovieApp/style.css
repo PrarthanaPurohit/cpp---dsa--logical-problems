@@ -1,0 +1,28 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+.winky-rough-body {
+  font-family: "Winky Rough", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* //css variable */
+:root{
+    --bg-color:#191919;
+}
+body{
+  background-color: var(--bg-color);
+}
+
+.header{
+  padding:2rem;
+}
+
+.heading-1{
+  font-size:3rem;
+  color:#fafafa;
+}
